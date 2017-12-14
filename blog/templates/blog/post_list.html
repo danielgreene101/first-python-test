@@ -11,14 +11,12 @@
         <h1><a href="/">Hello World</a></h1>
     </div>
 
-    <div>
-        <h3><a href="/">Test Post</a></h3>
-        <p>askjdhfas flkajshf lkasdj f;lasjd flaksjd fl;kajs df;kasj dfl;kjas d;fk asdfj as;dfj as;dlkfj as;dk jf;askjd f;lkasdj f;asjd fakjd f;j</p>
-    </div>
-
-    <div>
-        <h3><a href="/">Test Post2</a></h3>
-        <p>askjdhfas flkajshf lkasdj f;lasjd flaksjd fl;kajs df;kasj dfl;kjas d;fk asdfj as;dfj as;dlkfj as;dk jf;askjd f;lkasdj f;asjd fakjd f;j</p>
-    </div>
+    {% for post in posts %}
+        <div>
+            <h1><a href="">{{ post.title }}</a></h1>
+            <p>published: {{ post.published_date }}</p>
+            <p>{{ post.text|linebreaksbr }}</p>
+        </div>
+        {% endfor %}
 </body>
 </html>
